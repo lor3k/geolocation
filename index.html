@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    a {
+      font-size: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <script>
+    window.navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+      let link = `https://www.google.pl/maps/place/${latitude}+${longitude}`;
+      document.body.innerHTML = `<a href="${link}">Mapa</a>`;
+    });
+  </script>
+</body>
+
+</html>
